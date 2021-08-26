@@ -1,0 +1,52 @@
+<template>
+
+    <!--Loading Spinner-->
+    
+
+   <lightning-card class="" title="Account List View">
+
+       <!--Account List table starts-->
+
+       <template if:true={renderTable}>
+           <div class="tableDiv">
+               <div class={tableStyle}>
+                   <table aria-describedby="conatact-list" class="slds-table  slds-table_bordered ">
+
+                       <!--Header of the table-->
+                       <thead>
+                           <tr class="slds-line-height_reset">
+                               <th class="slds-size_1-of-6 " scope="col">
+                                   <div class="slds-truncate " title="Id"> Id</div>
+                               </th>
+                               <th class="slds-size_1-of-6 " scope="col">
+                                   <div class="slds-truncate " title="Name">Name</div>
+                               </th>
+                           </tr>
+                       </thead>
+
+                       <!--Body of the table-->
+                       <tbody>
+                           <template for:each={accounts} for:item="item" for:index="indexVar">
+                               <tr key={item.Id} class="slds-hint-parent">
+                                   <td class="slds-size_1-of-6">
+                                       <div>
+                                           {item.Id}
+                                       </div>
+                                   </td>
+                                   <td class="slds-size_1-of-6">
+                                       <div>
+                                           {item.Name}
+                                       </div>
+                                   </td>
+                                   
+                                  
+                               </tr>
+                           </template>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+
+       </template>
+   </lightning-card>
+</template>
